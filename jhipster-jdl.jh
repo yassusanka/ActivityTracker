@@ -1,0 +1,56 @@
+entity Student {
+	studentname String,
+    studentid String
+}
+entity User{
+	studentname String,
+	studentid String
+}
+// an ignored comment
+/** not an ignored comment */
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity Activity {
+	activityname String,
+    activityid String,
+    activitydate LocalDate,
+    starttime LocalDate,
+    endtime LocalDate
+    
+}
+
+entity Myuser{
+	studentname String,
+	studentid String
+
+}
+
+relationship ManyToMany {
+	Student{activy} to Activity
+}
+relationship ManyToOne {
+	Student{user} to User
+}
+// defining multiple OneToMany relationships with comments
+
+relationship OneToOne {
+	MyUser{location} to Location{myUser}
+
+}
+
+relationship OneToOne {
+	MyUser{user} to User
+}
+
+
+// defining multiple oneToOne relationships
+
+// Set pagination options
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
