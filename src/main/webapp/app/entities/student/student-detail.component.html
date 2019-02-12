@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="student">
+            <h2><span jhiTranslate="stucdentdetailsApp.student.detail.title">Student</span> {{student.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="stucdentdetailsApp.student.studentname">Studentname</span></dt>
+                <dd>
+                    <span>{{student.studentname}}</span>
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.student.studentid">Studentid</span></dt>
+                <dd>
+                    <span>{{student.studentid}}</span>
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.student.user">User</span></dt>
+                <dd>
+                    {{student.user?.id}}
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.student.student">Student</span></dt>
+                <dd>
+                    <span *ngFor="let student of student.students; let last = last">
+                        <a [routerLink]="['/activity', student?.id, 'view' ]">{{student.id}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/student', student.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

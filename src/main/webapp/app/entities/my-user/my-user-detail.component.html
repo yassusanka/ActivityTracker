@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="myUser">
+            <h2><span jhiTranslate="stucdentdetailsApp.myUser.detail.title">My User</span> {{myUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="stucdentdetailsApp.myUser.userName">User Name</span></dt>
+                <dd>
+                    <span>{{myUser.userName}}</span>
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.myUser.userid">Userid</span></dt>
+                <dd>
+                    <span>{{myUser.userid}}</span>
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.myUser.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="myUser.location">
+                        <a [routerLink]="['/location', myUser.location?.id, 'view']">{{myUser.location?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="stucdentdetailsApp.myUser.user">User</span></dt>
+                <dd>
+                    {{myUser.user?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/my-user', myUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
