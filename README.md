@@ -11,3 +11,8 @@ Built With
 
 -   [jHipster](https://start.jhipster.tech/#/) - Application generator
 -   [Maven](https://maven.apache.org/) - Dependency Management
+
+Technologies
+
+Angular, Spring Boot, MySQL, Amazon Rekognition Image
+
