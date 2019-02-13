@@ -8,5 +8,6 @@ Break down into end to end tests
 E2E in development.
 
 Built With
-jHipster - Application generator
-Maven - Dependency Management
+
+-   [jHipster](https://start.jhipster.tech/#/) - Application generator
+-   [Maven](https://maven.apache.org/) - Dependency Management
