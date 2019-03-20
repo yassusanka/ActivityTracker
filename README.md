@@ -11,6 +11,8 @@ Built With
 
 -   [jHipster](https://start.jhipster.tech/#/) - Application generator
 -   [Maven](https://maven.apache.org/) - Dependency Management
+ Calendar:  
+    http://www.iconfinder.com/icondetails/6634/128/calendar_date_event_plan_icon
 
 Technologies
 
